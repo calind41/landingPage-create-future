@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create future</title>
+	<link href="hamburgers.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+
+		body,html {
+			height: 100%;
+			margin: 0;
+		}	
+		.bg {
+			position: relative;		
+			/*background-image: url(circle.jpeg);*/
+			background: #071536;
+			/* full height */
+			height: 100%;
+			/* center and scale the image nicely */
+			background-position: center;
+			background-size: cover;
+			opacity: 0.95;
+		}
+
+		.bg .p1 {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			font-family: 'Roboto', sans-serif;
+			color: white;
+			font-size: 8em;	
+			text-align: center;
+			left: 20%;
+			top: 32%;
+		}
+		.bg .p1:hover, .bg .p2:hover, .bg .p3:hover {
+			cursor: pointer;
+		}
+
+		.bg .p2 {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			color: red;
+			font-family: 'Roboto',sans-serif;
+			font-size: 1.3em;
+			left: 60%;
+			top: 52%;
+		}
+		.bg .nav-b  {		
+			color: red;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		.bg .nav-b li {
+			float: left;
+		}
+		.bg .nav-b li a {
+			display: block;
+			padding: 14px;
+		}
+		.bg .nav-b {
+			position: absolute;
+			left: 78%;
+			color: white;
+			font-family: 'Roboto',sans-serif;
+			top: 5%;
+		}
+
+		.bg .dot {
+			padding: 0;
+			margin: 0;
+			height: 10px;
+			width: 10px;
+			position: absolute;
+			left: 77%;
+			top:7.7%;
+			border-radius: 100%;
+			background-color: white;
+		}
+		.bg .line1 {
+			position: absolute;
+			left: 8%;
+			top: 80%;
+			width: 0px;
+			height: 3px;
+			margin: 0;
+			padding: 0;
+			background-color: green;
+			opacity: 0;
+			transition: opacity 1s,width 0.5s;
+		}
+		.bg .l1, .bg .l2, .bg .l3 {
+			cursor: pointer;
+		}
+		.bg .nav-b .l1:hover .line1 {
+			opacity:1;
+			width: 36px;
+		}
+
+		.bg .nav-b .l2:hover .line2 {
+                        opacity:1;
+			width: 36px;
+                }
+	
+		.bg .nav-b .l3:hover .line3 {
+                        opacity:1;
+			width: 50px;
+                }
+
+		.bg .line2 {
+                        position: absolute;
+                        left: 37.5%;
+			top: 80%;
+                        width: 0px;
+                        height: 3px;
+			margin: 0;
+			padding: 0;
+                        background-color: green;	
+			opacity: 0;
+			transition: opacity 1s,width 0.5s;
+                }
+
+		.bg .line3 {
+                        position: absolute;
+                        left: 69%;	
+			top: 80%;
+                        width: 0px;
+                        height: 3px;
+                        background-color: green;
+			padding: 0;
+			margin: 0;
+			opacity: 0;
+			transition: opacity 1s,width 0.5s;
+                }
+
+		.bg .msg {
+			position: absolute;
+			left: 20%;
+			top: 70%;
+			padding: 0;
+			margin: 0;
+			width: 320px;
+			font-size: 14px;
+			color: white;
+			font-style: 'Roboto',sans-serif;
+			line-height: 1.4;
+			word-spacing: 3px;
+		}
+		.bg .hr-line {
+			position: absolute;
+			top: 70%;
+			left: 46%;
+			width: 2px;
+			height: 79px;
+			background-color: gray;
+		}
+
+		.bg .square-1 {
+			position: absolute;
+			left: 50%;
+			top:70%;
+			padding: 0;
+			margin: 0;
+			width: 79px;
+			height: 79px;
+			background: linear-gradient(to bottom left, #36b3a7,#81f7ec);
+		}
+
+		.bg .square-2 {
+			position: absolute;
+			left: 58.8%;
+			top: 70%;
+			height: 79px;
+			width: 79px;
+			background: none;
+			padding: 0;
+			margin: 0;
+			color: red;
+			box-sizing: border-box;
+			border: 2px solid;
+			border-image: linear-gradient(to bottom,#f25cd4,yellow) 1;
+			
+		}
+		.bg .square-2 p {
+			color: #ccb718;
+			font-size: 11px;
+			line-height: 12px;
+			font-weight: bold;
+			position: absolute;
+			top: 36%;
+			left: 15%;
+
+		}
+		.bg .square-1 .circle-in-square {
+			padding:0;
+			margin: 0;
+		}
+		.bg .square-2 .triangle {
+			padding: 0;
+			margin: 0;
+			border: solid 13px #f25cd4;
+			opacity: 0.8;
+			background-color: transparent;
+			width: 30px;
+			height: 0px;
+			border-right: solid 15px transparent;
+			border-top: solid 8px transparent;
+			border-bottom: solid 8px transparent;
+			position: absolute;
+			left: 70%;
+			top: 11%;
+		
+		}
+
+		.bg  .triangle p {
+			padding: 0;
+			margin: 0;
+			z-index: 1000;
+			color: red;
+		}
+		.bg .square-1 p {
+			position: absolute;
+			padding: 0;
+			margin: 0;
+			top: 48%;
+			left: 14%;
+			color: black;
+			font-size: 11px;	
+			line-height: 12px;
+			font-weight: bold;
+		}
+	
+
+		.bg .square-1 .circle-in-square {
+			background-color: black;
+			opacity: 0.85;
+			width: 14px;
+			height: 14px;
+			border-radius: 100%;
+			position: absolute;
+			left: 70%;
+			top: 12%;
+
+		}
+
+		.hamburger span {
+			background: red;
+			width: 20px;
+			height: 3px;
+			display: block;
+			margin-bottom: 2px;
+
+		}
+
+		.hamburger {
+			position: absolute;
+			left: 93%;
+			top: 5.5%;
+		}
+
+		.orangeBox {
+			position: absolute;
+			left: 93.4%;
+			top:7%;
+			background: transparent;
+			color: red;
+			font-family: 'Helvetica', 'Arial',sans-serif;
+			font-size: 1.2em;
+			font-weight: bold;
+			text-align: center;
+			width: 40px;
+			height: 15px;
+			border-radius: 5px;
+			visibility: hidden;
+		}
+
+		.orangeBox span {
+			cursor: pointer;
+		}
+		.txt-left {
+			position: absolute;
+			top: 5%;
+			left: 5%;	
+			color: white;
+			font-family: 'Roboto',sans-serif;
+			font-weight: bold;
+			font-size: 25px;
+			letter-spacing: 1px;
+		}
+
+		.fa-facebook {
+			position: absolute;
+			left: 93.5%;
+			bottom: 10%;
+			padding: 0;
+			margin: 0;	
+			background: gray;
+			font-size: 30px;
+			border-radius: 50%;
+		}
+		.txt {	
+			position: absolute;
+			left: 92%;
+			bottom: 11%;
+			background: transparent;
+			width: 100px;
+			height: 200px;
+			padding: 0;
+			margin: 0;
+			color: gray;
+			font-weight: bold;
+		}
+		.txt .t1 {
+			position: absolute;
+			top:65%;
+			writing-mode: vertical-lr;
+			text-orientation: mixed;
+			transform: rotate(-180deg);
+		}
+		.txt .t2 {
+			position: absolute;
+			left: 25%;
+			top:41%;
+			font-size: 10px;
+			writing-mode: vertical-lr;
+			text-orientation: mixed;
+			transform: rotate(-180deg);
+		}
+
+		.txt-center {
+
+		}
+
+
+	</style>
+
+</head>
+
+<body>
+	<div class="bg">
+		<div class="txt-left">field.</div>
+		<div class="dot"></div>
+		<ul class="nav-b">
+
+			<li class="l1">
+				<a>login</a>
+				<div class="line1"></div>
+			</li>
+			<li class="l2">
+				<a>learn</a>
+				<div class="line2"></div>
+			</li>
+			<li class="l3">
+				<a>contact</a>
+				<div class="line3"></div>
+			</li>
+		</ul>	
+		<!-- hamburger -->
+		<div class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<!-- X sign -->
+		<div class="orangeBox">
+			<span id="x">X</span>
+		</div>
+		
+		<div class="txt-center">
+			<p class="p1">Create Future</p>
+			<p class="p2">Where Interests Overlap</p>
+		</div>
+
+
+		<p class="msg">The only way to do great work is to love what you do. If you haven't found it, thats what Field is for. Let us help you discover who you trully are, and guide you on your path.</p>
+		<div class="hr-line"></div>
+		<div class="square-1"><div class="circle-in-square"></div><p>GET ON <br>FIELD</p></div>
+		<div class="square-2"><div class="triangle"></div><p>HOW IT<br> WORKS</p></div>
+	</div>
+	<div class="txt">
+		<p class="t1">field.</p>
+		<br>
+		<p class="t2">All Rights Reserved</p>
+	</div>
+	<i class="fab fa-facebook"></i>
+	<script src="main.js"></script>
+	<script src="https://kit.fontawesome.com/dd1c8140b5.js"></script>
+</body>
+</html>
